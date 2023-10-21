@@ -9,3 +9,5 @@
       tags: traefik
     - name: portainer
       tags: portainer
+    - name: heimdall
+      tags: heimdall
