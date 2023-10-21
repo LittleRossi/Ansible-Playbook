@@ -8,7 +8,7 @@ Installiert werden sie mit dem folgenden Befehl:
 
 # SSL Zertifikate
 
-aktuell werden alle SSL-Zertifikate per DNS-Challenge von Traefik generiert.
+aktuell werden alle SSL-Zertifikate per http-Challenge von Traefik generiert.
 
 # Ansible-Vault / Secrets
 
