@@ -1,0 +1,3 @@
+traefik_domain: "traefik.starzmann.net"
+traefik_email: "nick@starzmann.net"
+traefik_acme_domain: "starzmann.net"

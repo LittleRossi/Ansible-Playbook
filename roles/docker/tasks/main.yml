@@ -1,0 +1,17 @@
+- name: Install docker
+  ansible.builtin.include_role:
+    name: geerlingguy.docker
+  vars:
+    docker_install_compose_plugin: true
+    docker_install_compose: false
+    docker_users:
+      - "{{ ansible_env.SUDO_USER | default(ansible_user_id) }}"
+
+- name: copy docker daemon.json
+  ansible.builtin.template:
+    src: daemon.json.j2
+    dest: /etc/docker/daemon.json
+    owner: root
+    group: root
+    mode: "640"
+  notify: restart docker.service

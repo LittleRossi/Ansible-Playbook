@@ -1,0 +1,11 @@
+---
+
+- hosts: groot
+  become: true
+  roles:
+    - name: docker
+      tags: docker
+    - name: traefik
+      tags: traefik
+    - name: portainer
+      tags: portainer
