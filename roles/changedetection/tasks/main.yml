@@ -1,0 +1,30 @@
+- name: copy systemd unit
+  ansible.builtin.template:
+    src: changedetection.service.j2
+    dest: /etc/systemd/system/changedetection.service
+    owner: root
+    group: root
+    mode: "644"
+  notify: restart changedetection.service
+
+- name: create /data/changedetection/datastore dir
+  ansible.builtin.file:
+    path: "{{ root }}/datastore"
+    state: directory
+
+- name: copy docker-compose file
+  ansible.builtin.template:
+    src: docker-compose.yml.j2
+    dest: "{{ root }}/docker-compose.yml"
+    owner: root
+    group: root
+    mode: "644"
+  notify: restart changedetection.service
+
+- name: start changedetection.service
+  ansible.builtin.systemd:
+    state: started
+    daemon_reload: true
+    enabled: true
+    name: changedetection.service
+  register: changedetection_started

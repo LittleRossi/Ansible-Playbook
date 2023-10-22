@@ -1,0 +1,18 @@
+networks:
+  web:
+    external: true
+
+services:
+  app:
+    image: dgtlmoon/changedetection.io:latest
+    container_name: changedetection
+    networks:
+      - web
+    volumes:
+      - {{ root }}/datastore:/datastore # Changedetection data
+    environment:
+    - PORT=5000
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.${COMPOSE_PROJECT_NAME}-app.rule=Host(`{{ changedetection_domain | mandatory }}`)
+      - traefik.http.routers.${COMPOSE_PROJECT_NAME}-app.entrypoints=https

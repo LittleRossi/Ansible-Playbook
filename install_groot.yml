@@ -15,3 +15,5 @@
       tags: it-tools
     - name: webserver
       tags: webserver
+    - name: changedetection
+      tags: changedetection

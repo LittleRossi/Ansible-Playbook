@@ -1,0 +1,5 @@
+- name: restart changedetection.service
+  when: changedetection_started is not changed
+  ansible.builtin.systemd:
+    name: changedetection.service
+    state: restarted
