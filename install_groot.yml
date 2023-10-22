@@ -17,3 +17,5 @@
       tags: webserver
     - name: changedetection
       tags: changedetection
+    - name: netdata
+      tags: netdata
