@@ -12,6 +12,7 @@ Installiert werden sie mit dem folgenden Befehl:
 - [X] Changedetection
 - [X] littleLink (aboutMe Page)
 - [X] Uptime-kuma
+- [ ] Guacamole
 
 
 # SSL Zertifikate
