@@ -1,10 +1,18 @@
-# Ansible-Playbook
-Inspiriert von @NilsLorenzen
 # Ansible Librarys
 Die Playbooks benötigen einige Ansible Librarys. Diese werden in der requirements.yml gesammelt.
 Installiert werden sie mit dem folgenden Befehl:
 
 <code> sh bootstrap </code>
+
+# Docker-Container
+- [X] Portainer 
+- [X] Heimdall
+- [X] NGINX (webserver)
+- [X] NGINX (webspace)
+- [X] Changedetection
+- [X] littleLink (aboutMe Page)
+- [X] Uptime-kuma
+
 
 # SSL Zertifikate
 
