@@ -21,3 +21,5 @@
       tags: littlelink
     - name: webspace
       tags: webspace
+    - name: uptime
+      tags: uptime
