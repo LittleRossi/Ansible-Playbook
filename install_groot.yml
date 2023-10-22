@@ -17,5 +17,7 @@
       tags: webserver
     - name: changedetection
       tags: changedetection
-    - name: netdata
-      tags: netdata
+    - name: littlelink
+      tags: littlelink
+    - name: webspace
+      tags: webspace
