@@ -1,0 +1,44 @@
+- name: copy systemd unit
+  ansible.builtin.template:
+    src: clevereinkaufen.service.j2
+    dest: /etc/systemd/system/clevereinkaufen.service
+    owner: root
+    group: root
+    mode: "644"
+  notify: restart clevereinkaufen.service
+
+- name: create /data/clevereinkaufen dir
+  ansible.builtin.file:
+    path: "{{ root }}"
+    state: directory
+
+- name: create /data/clevereinkaufen/data dir
+  ansible.builtin.file:
+    path: "{{ root }}/data"
+    state: directory
+
+- name: copy nginx conf file
+  ansible.builtin.template:
+    src: nginx.conf.j2
+    dest: "{{ root }}/nginx.conf"
+    owner: root
+    group: root
+    mode: "644"
+  notify: restart clevereinkaufen.service
+
+- name: copy docker-compose file
+  ansible.builtin.template:
+    src: docker-compose.yml.j2
+    dest: "{{ root }}/docker-compose.yml"
+    owner: root
+    group: root
+    mode: "644"
+  notify: restart clevereinkaufen.service
+
+- name: start clevereinkaufen.service
+  ansible.builtin.systemd:
+    state: started
+    daemon_reload: true
+    enabled: true
+    name: clevereinkaufen.service
+  register: clevereinkaufen_started
