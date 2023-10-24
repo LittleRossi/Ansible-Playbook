@@ -1,0 +1,5 @@
+- name: restart retrogames.service
+  when: retrogames_started is not changed
+  ansible.builtin.systemd:
+    name: retrogames.service
+    state: restarted

@@ -1,0 +1,24 @@
+networks:
+  web:
+    external: true
+
+services:
+  app:
+    image: lscr.io/linuxserver/emulatorjs:latest
+    container_name: retrogames
+    networks:
+      - web
+    volumes:
+      - {{ root }}/data:/data # retrogames data
+      - {{ root }}/config:/config # retrogames config
+    ports:
+      - 3003:3000   #Management-Port
+      - 3005:80     #Game Port
+      - 3004:4001
+    environment:
+    - PUID=1000
+    - PGID=1000
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.${COMPOSE_PROJECT_NAME}-app.rule=Host(`{{ retrogames_domain | mandatory }}`)
+      - traefik.http.routers.${COMPOSE_PROJECT_NAME}-app.entrypoints=https
