@@ -1,0 +1,5 @@
+- name: restart minecraft.service
+  when: minecraft_started is not changed
+  ansible.builtin.systemd:
+    name: minecraft.service
+    state: restarted
