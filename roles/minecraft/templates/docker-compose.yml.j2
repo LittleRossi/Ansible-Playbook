@@ -1,18 +1,16 @@
 networks:
   default:
-  web:
-    external: true
 
 services:
   app:
     image: itzg/minecraft-server:latest
     container_name: minecraft
     networks:
-      - web
+      - default
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - {{ root }}/data:/data
     ports:
-      - 25565:25565
+      - 3306:19132
     environment:
       EULA: "TRUE"
