@@ -5,14 +5,18 @@ Installiert werden sie mit dem folgenden Befehl:
 <code> sh bootstrap </code>
 
 # Docker-Container
-- [X] Portainer 
-- [X] Heimdall
+- [X] Changedetection
 - [X] NGINX (webserver)
 - [X] NGINX (webspace)
-- [X] Changedetection
+- [X] Portainer 
+- [X] Heimdall
+- [X] IT-Tools
+- [X] Minecraft
+- [X] Netdata
+- [X] Retrogames Emulator
+- [X] Traefik
 - [X] littleLink (aboutMe Page)
 - [X] Uptime-kuma
-- [ ] Guacamole
 
 
 # SSL Zertifikate
