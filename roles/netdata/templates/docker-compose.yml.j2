@@ -1,0 +1,36 @@
+networks:
+  web:
+    external: true
+  host:
+    external: true
+services:
+  app:
+    image: netdata/netdata:latest
+    container_name: netdata
+    networks:
+      - web
+    volumes:
+      - {{ root }}/config:/etc/netdata
+      - {{ root }}/lib:/var/lib/netdata
+      - {{ root }}/cache:/var/cache/netdata
+      - /etc/passwd:/host/etc/passwd:ro
+      - /etc/group:/host/etc/group:ro
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /etc/os-release:/host/etc/os-release:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    pid: host
+    restart: unless-stopped
+    cap_add:
+      - SYS_PTRACE
+      - SYS_ADMIN
+    security_opt:
+      - apparmor:unconfined
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.${COMPOSE_PROJECT_NAME}-app.rule=Host(`{{ netdata_domain | mandatory }}`)
+      - traefik.http.routers.${COMPOSE_PROJECT_NAME}-app.entrypoints=https
+
+
+
+

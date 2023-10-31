@@ -29,3 +29,5 @@
       tags: retrogames
     - name: minecraft
       tags: minecraft
+    - name: netdata
+      tags: netdata
