@@ -1,5 +1,4 @@
 ---
-
 - hosts: groot
   become: true
   roles:
@@ -31,3 +30,5 @@
       tags: minecraft
     - name: netdata
       tags: netdata
+    - name: rootwebserver
+      tags: rootwebserver

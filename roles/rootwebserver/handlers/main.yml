@@ -1,0 +1,5 @@
+- name: restart rootwebserver.service
+  when: rootwebserver_started is not changed
+  ansible.builtin.systemd:
+    name: rootwebserver.service
+    state: restarted
