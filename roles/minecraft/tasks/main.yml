@@ -4,26 +4,31 @@
     dest: /etc/systemd/system/minecraft.service
     owner: root
     group: root
-    mode: "644"
+    mode: '644'
   notify: restart minecraft.service
 
 - name: create /data/minecraft dir
   ansible.builtin.file:
-    path: "{{ root }}"
+    path: '{{ root }}'
     state: directory
 
 - name: create /data/minecraft/data dir
   ansible.builtin.file:
-    path: "{{ root }}/data"
+    path: '{{ root }}/data'
+    state: directory
+
+- name: create /data/minecraft/backup dir
+  ansible.builtin.file:
+    path: '{{ root }}/backup'
     state: directory
 
 - name: copy docker-compose file
   ansible.builtin.template:
     src: docker-compose.yml.j2
-    dest: "{{ root }}/docker-compose.yml"
+    dest: '{{ root }}/docker-compose.yml'
     owner: root
     group: root
-    mode: "644"
+    mode: '644'
   notify: restart minecraft.service
 
 - name: start minecraft.service
