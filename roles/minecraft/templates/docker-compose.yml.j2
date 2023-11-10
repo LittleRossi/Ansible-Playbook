@@ -20,6 +20,7 @@ services:
       VIEW_DISTANCE: 16
       ICON: "https://dl.starzmann.net/mc_icon.png"
       MOTD: "\u00A74\u22D9\u00A74\u00A7kXXXX\u00A74\u22D9\u00A72 Starzmann und Co. KG Server \u00A74 \u22D8\u00A74\u00A7kXXXX\u00A74\u22D8\u00A7r"
+      MEMORY: 4G
 
   backups:
     image: itzg/mc-backup
@@ -29,7 +30,7 @@ services:
       BACKUP_INTERVAL: "4h"
       RCON_HOST: app
       PRUNE_BACKUPS_DAYS: 7
-      INITIAL_DELAY: 0
+      INITIAL_DELAY: 2m
     volumes:
       - {{ root }}/data:/data:ro
       - {{ root }}/backup:/backups
