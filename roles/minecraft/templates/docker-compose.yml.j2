@@ -14,6 +14,7 @@ services:
       - 3306:19132
     environment:
       EULA: "TRUE"
+      TYPE: SPIGOT
       VERSION: "1.20.1"
       DIFFICULTY: "hard"
       PVP: "true"
@@ -22,15 +23,15 @@ services:
       MOTD: "\u00A74\u22D9\u00A74\u00A7kXXXX\u00A74\u22D9\u00A72 Starzmann und Co. KG Server \u00A74 \u22D8\u00A74\u00A7kXXXX\u00A74\u22D8\u00A7r"
       MEMORY: 4G
 
-  backups:
-    image: itzg/mc-backup
+#  backups:
+#    image: itzg/mc-backup
 #   depends_on:
 #     app
-    environment:
-      BACKUP_INTERVAL: "4h"
-      RCON_HOST: app
-      PRUNE_BACKUPS_DAYS: 7
-      INITIAL_DELAY: 2m
-    volumes:
-      - {{ root }}/data:/data:ro
-      - {{ root }}/backup:/backups
+#    environment:
+#      BACKUP_INTERVAL: "24h"
+#      RCON_HOST: app
+#      PRUNE_BACKUPS_DAYS: 7
+#      INITIAL_DELAY: 2m
+#    volumes:
+#      - {{ root }}/data:/data:ro
+#      - {{ root }}/backup:/backups
