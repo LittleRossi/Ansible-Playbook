@@ -12,6 +12,7 @@ services:
       - {{ root }}/data:/data
     ports:
       - 3306:19132
+      - 8123:8123 #for dynmap webserver
     environment:
       EULA: "TRUE"
       TYPE: SPIGOT
