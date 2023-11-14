@@ -10,6 +10,8 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - {{ root }}/data:/data
+    stdin_open: true   ## needed so you can attach to the mc-server console via docker attach
+    tty: true 
     ports:
       - 3306:19132
       - 8123:8123 #for dynmap webserver
