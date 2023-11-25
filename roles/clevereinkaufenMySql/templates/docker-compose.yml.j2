@@ -8,6 +8,8 @@ services:
   db:
     image: mysql:latest
     restart: always
+    volumes:
+      - {{ root }}/data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: {{ mysql_root_password | mandatory }}
       MYSQL_USER: {{ mysql_user | mandatory }}

@@ -1,5 +1,5 @@
-- name: restart cleverEinkaufenMySQL.service
-  when: cleverEinkaufenMySQL_started is not changed
+- name: restart clevereinkaufenmysql.service
+  when: clevereinkaufenmysql_started is not changed
   ansible.builtin.systemd:
-    name: cleverEinkaufenMySQL.service
+    name: clevereinkaufenmysql.service
     state: restarted

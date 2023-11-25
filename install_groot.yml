@@ -32,3 +32,5 @@
       tags: netdata
     - name: rootwebserver
       tags: rootwebserver
+    - name: clevereinkaufenmysql
+      tags: clevereinkaufenmysql
