@@ -34,3 +34,5 @@
       tags: rootwebserver
     - name: clevereinkaufenmysql
       tags: clevereinkaufenmysql
+    - name: verwaltungsportalmysql
+      tags: verwaltungsportalmysql
