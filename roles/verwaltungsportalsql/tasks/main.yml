@@ -1,13 +1,13 @@
 - name: copy systemd unit
   ansible.builtin.template:
-    src: clevereinkaufenmysql.service.j2
-    dest: /etc/systemd/system/clevereinkaufenmysql.service
+    src: verwaltungsportalsql.service.j2
+    dest: /etc/systemd/system/verwaltungsportalsql.service
     owner: root
     group: root
     mode: '644'
-  notify: restart clevereinkaufenmysql.service
+  notify: restart verwaltungsportalsql.service
 
-- name: create clevereinkaufenmysql/data dir
+- name: create verwaltungsportalsql/data dir
   ansible.builtin.file:
     path: '{{ root }}/data'
     state: directory
@@ -19,12 +19,12 @@
     owner: root
     group: root
     mode: '644'
-  notify: restart clevereinkaufenmysql.service
+  notify: restart verwaltungsportalsql.service
 
-- name: start clevereinkaufenmysql.service
+- name: start verwaltungsportalsql.service
   ansible.builtin.systemd:
     state: started
     daemon_reload: true
     enabled: true
-    name: clevereinkaufenmysql.service
-  register: clevereinkaufenmysql_started
+    name: verwaltungsportalsql.service
+  register: verwaltungsportalsql_started

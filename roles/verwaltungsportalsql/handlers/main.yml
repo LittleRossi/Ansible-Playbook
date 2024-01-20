@@ -1,5 +1,5 @@
-- name: restart clevereinkaufenmysql.service
-  when: clevereinkaufenmysql_started is not changed
+- name: restart verwaltungsportalsql.service
+  when: verwaltungsportalsql_started is not changed
   ansible.builtin.systemd:
-    name: clevereinkaufenmysql.service
+    name: verwaltungsportalsql.service
     state: restarted
