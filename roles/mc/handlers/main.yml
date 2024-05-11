@@ -1,0 +1,5 @@
+- name: restart mc.service
+  when: mc_started is not changed
+  ansible.builtin.systemd:
+    name: mc.service
+    state: restarted

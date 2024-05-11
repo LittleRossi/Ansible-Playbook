@@ -1,0 +1,29 @@
+networks:
+  default:
+
+services:
+  app:
+    image: itzg/minecraft-server:latest
+    container_name: better-mc
+    networks:
+      - default
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /home/data/mc/data:/data
+    stdin_open: true   ## needed so you can attach to the mc-server console via docker attach
+    tty: true
+    ports:
+      - 3232:25565
+      - 8123:8123 #for dynmap webserver
+    environment:
+      EULA: "TRUE"
+      TYPE: AUTO_CURSEFORGE
+      CF_API_KEY: "$$2a$$10$$5XOdEn0Q.3mvCeCTPXJO.eME4NzP6Rok2t6N8jp0gsoA.pDIzMwzq"
+      CF_PAGE_URL: "https://www.curseforge.com/minecraft/modpacks/better-mc-forge-bmc4/files/5098133"
+      VERSION: "1.20.1"
+      DIFFICULTY: "hard"
+      PVP: "true"
+      VIEW_DISTANCE: 16
+      ICON: "https://dl.starzmann.net/mc_icon.png"
+      MOTD: "\u00A74\u22D9\u00A74\u00A7kXXXX\u00A74\u22D9\u00A72 Starzmann und Co. KG Server 2 \u00A74 \u22D8\u00A74\u00A7kXXXX\u00A74\u22D8\u00A7r"
+      MEMORY: 4G

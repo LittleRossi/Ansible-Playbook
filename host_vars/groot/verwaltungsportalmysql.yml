@@ -1,4 +1,4 @@
-adminer_domain: 'clevereinkaufenadminer.starzmann.net'
-mysql_root_password: ''
-mysql_user: ''
-mysql_pasword: ''
+adminer_domain: 'verwaltungsportalSql.starzmann.net'
+mysql_root_password: 'TollesPasswort!'
+mysql_user: 'sqluser'
+mysql_pasword: 'TollesPasswort!'

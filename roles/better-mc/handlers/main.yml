@@ -1,0 +1,5 @@
+- name: restart better-mc.service
+  when: better-mc_started is not changed
+  ansible.builtin.systemd:
+    name: better-mc.service
+    state: restarted

@@ -4,7 +4,7 @@ networks:
 services:
   app:
     image: itzg/minecraft-server:latest
-    container_name: minecraft
+    container_name: mc
     networks:
       - default
     volumes:
@@ -13,28 +13,15 @@ services:
     stdin_open: true   ## needed so you can attach to the mc-server console via docker attach
     tty: true 
     ports:
-      - 3306:19132
+      - 3232:25565
       - 8123:8123 #for dynmap webserver
     environment:
       EULA: "TRUE"
       TYPE: SPIGOT
-      VERSION: "1.20.4"
+      VERSION: "1.20.1"
       DIFFICULTY: "hard"
       PVP: "true"
       VIEW_DISTANCE: 16
       ICON: "https://dl.starzmann.net/mc_icon.png"
-      MOTD: "\u00A74\u22D9\u00A74\u00A7kXXXX\u00A74\u22D9\u00A72 Starzmann und Co. KG Server \u00A74 \u22D8\u00A74\u00A7kXXXX\u00A74\u22D8\u00A7r"
-      MEMORY: 5G
-
-#  backups:
-#    image: itzg/mc-backup
-#   depends_on:
-#     app
-#    environment:
-#      BACKUP_INTERVAL: "24h"
-#      RCON_HOST: app
-#      PRUNE_BACKUPS_DAYS: 7
-#      INITIAL_DELAY: 2m
-#    volumes:
-#      - {{ root }}/data:/data:ro
-#      - {{ root }}/backup:/backups
+      MOTD: "\u00A74\u22D9\u00A74\u00A7kXXXX\u00A74\u22D9\u00A72 Starzmann und Co. KG Server 2 \u00A74 \u22D8\u00A74\u00A7kXXXX\u00A74\u22D8\u00A7r"
+      MEMORY: 4G
