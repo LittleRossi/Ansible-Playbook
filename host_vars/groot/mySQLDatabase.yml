@@ -1,4 +1,4 @@
-adminer_domain: 'clevereinkaufenadminer.starzmann.net'
+adminer_domain: 'DBAdminer.starzmann.net'
 mysql_root_password: ''
 mysql_user: ''
 mysql_pasword: ''

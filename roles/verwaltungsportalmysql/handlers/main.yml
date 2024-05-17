@@ -1,5 +1,0 @@
-- name: restart verwaltungsportalmysql.service
-  when: verwaltungsportalmysql_started is not changed
-  ansible.builtin.systemd:
-    name: verwaltungsportalmysql.service
-    state: restarted

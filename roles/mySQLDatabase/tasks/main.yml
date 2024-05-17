@@ -1,13 +1,13 @@
 - name: copy systemd unit
   ansible.builtin.template:
-    src: verwaltungsportalmysql.service.j2
-    dest: /etc/systemd/system/verwaltungsportalmysql.service
+    src: mySQLDatabase.service.j2
+    dest: /etc/systemd/system/mySQLDatabase.service
     owner: root
     group: root
     mode: '644'
-  notify: restart verwaltungsportalmysql.service
+  notify: restart mySQLDatabase.service
 
-- name: create verwaltungsportalmysql/data dir
+- name: create mySQLDatabase/data dir
   ansible.builtin.file:
     path: '{{ root }}/data'
     state: directory
@@ -19,12 +19,12 @@
     owner: root
     group: root
     mode: '644'
-  notify: restart verwaltungsportalmysql.service
+  notify: restart mySQLDatabase.service
 
-- name: start verwaltungsportalmysql.service
+- name: start mySQLDatabase.service
   ansible.builtin.systemd:
     state: started
     daemon_reload: true
     enabled: true
-    name: verwaltungsportalmysql.service
-  register: verwaltungsportalmysql_started
+    name: mySQLDatabase.service
+  register: mySQLDatabase_started

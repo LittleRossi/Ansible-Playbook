@@ -1,0 +1,5 @@
+- name: restart mySQLDatabase.service
+  when: mySQLDatabase_started is not changed
+  ansible.builtin.systemd:
+    name: mySQLDatabase.service
+    state: restarted

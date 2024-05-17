@@ -22,19 +22,11 @@
       tags: webspace
     - name: uptime
       tags: uptime
-    - name: clevereinkaufen
-      tags: clevereinkaufen
     - name: retrogames
       tags: retrogames
     - name: minecraft
       tags: minecraft
     - name: netdata
       tags: netdata
-    - name: rootwebserver
-      tags: rootwebserver
-    - name: clevereinkaufenmysql
-      tags: clevereinkaufenmysql
-    - name: verwaltungsportalmysql
-      tags: verwaltungsportalmysql
     - name: mc
       tags: mc
