@@ -1,5 +1,0 @@
-- name: restart clevereinkaufen.service
-  when: clevereinkaufen_started is not changed
-  ansible.builtin.systemd:
-    name: clevereinkaufen.service
-    state: restarted
