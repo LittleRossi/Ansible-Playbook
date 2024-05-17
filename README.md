@@ -1,23 +1,29 @@
+# Hintergrund
+
+Dieses Playbook wird von mit verwendet um alle Docker Anwendungen, die ich verwende zu verwalten. Aktuell laufen Docker Container auf einem bei Hetzner gemieteten Server, sowie auf einem mini-PC in meinem lokalen Netzwerk. Alle Container, die öffentlich erreichbar sind, laufen auf dem Hetzner Server. Alles was nur lokal verwendet wird auf dem mini-PC.
+
 # Ansible Librarys
+
 Die Playbooks benötigen einige Ansible Librarys. Diese werden in der requirements.yml gesammelt.
 Installiert werden sie mit dem folgenden Befehl:
 
 <code> sh bootstrap </code>
 
 # Docker-Container
-- [X] Changedetection
-- [X] NGINX (webserver)
-- [X] NGINX (webspace)
-- [X] Portainer 
-- [X] Heimdall
-- [X] IT-Tools
-- [X] Minecraft
-- [X] Netdata
-- [X] Retrogames Emulator
-- [X] Traefik
-- [X] littleLink (aboutMe Page)
-- [X] Uptime-kuma
 
+- [x] Changedetection
+- [x] NGINX (webserver)
+- [x] NGINX (webspace)
+- [x] Portainer
+- [x] Heimdall
+- [x] IT-Tools
+- [x] Minecraft
+- [x] Netdata
+- [x] Retrogames Emulator
+- [x] Traefik
+- [x] littleLink (aboutMe Page)
+- [x] Uptime-kuma
+- [x] MySQL-Datenbank
 
 # SSL Zertifikate
 
