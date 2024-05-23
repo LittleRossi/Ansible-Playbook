@@ -30,3 +30,5 @@
       tags: netdata
     - name: mc
       tags: mc
+    - name: teamspeak
+      tags: teamspeak
