@@ -1,0 +1,13 @@
+sudo apt-get install binfmt-support qemu-user-static
+
+sudo dpkg --add-architecture amd64
+sudo apt-get update
+sudo apt-get upgrade
+
+
+// restart machine
+
+testing:
+sudo apt-get install hello:amd64
+
+// run hello
