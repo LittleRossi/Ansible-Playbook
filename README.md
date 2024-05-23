@@ -34,9 +34,9 @@ aktuell werden alle SSL-Zertifikate per http-Challenge von Traefik generiert.
 
 Secrets können sicher über den Ansible-Vault abgelegt werden.
 
-Die vault Dateien werden im Ordner _host_vars_ mit dem Namenschema: **NAME.vault.yml** abgelegt. In den Vault Dateien werden die verschlüsselten Variablem wie folgt angegeben:
+Die vault Dateien werden im Ordner _host_vars_ mit dem Namenschema: **NAME.vault.yml** abgelegt. In den Vault Dateien werden die verschlüsselten Variablen wie folgt angegeben:
 
-- vault_NAME_DER_VARIABLE: ''
+- vault_NAME_DER_VARIABLE: ' '
 
 In den host_vars werden die Variablen dann wie folgt referenziert:
 
