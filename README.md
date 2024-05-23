@@ -24,6 +24,7 @@ Installiert werden sie mit dem folgenden Befehl:
 - [x] littleLink (aboutMe Page)
 - [x] Uptime-kuma
 - [x] MySQL-Datenbank
+- [x] Teamspeak 3 Server
 
 # SSL Zertifikate
 
