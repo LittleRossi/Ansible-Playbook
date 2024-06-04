@@ -1,0 +1,2 @@
+verwaltungsportal_domain: "portal.starzmann.net"
+MYSQL_ROOT_PASSWORD: '{{ vault_verwaltungsportal_MYSQL_ROOT_PASSWORD }}'

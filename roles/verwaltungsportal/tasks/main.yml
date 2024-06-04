@@ -1,0 +1,30 @@
+- name: copy systemd unit
+  ansible.builtin.template:
+    src: verwaltungsportal.service.j2
+    dest: /etc/systemd/system/verwaltungsportal.service
+    owner: root
+    group: root
+    mode: "644"
+  notify: restart verwaltungsportal.service
+
+- name: create /data/verwaltungsportal/database-data dir
+  ansible.builtin.file:
+    path: "{{ root }}/database-data"
+    state: directory
+
+- name: copy docker-compose file
+  ansible.builtin.template:
+    src: docker-compose.yml.j2
+    dest: "{{ root }}/docker-compose.yml"
+    owner: root
+    group: root
+    mode: "644"
+  notify: restart verwaltungsportal.service
+
+- name: start verwaltungsportal.service
+  ansible.builtin.systemd:
+    state: started
+    daemon_reload: true
+    enabled: true
+    name: verwaltungsportal.service
+  register: verwaltungsportal_started
