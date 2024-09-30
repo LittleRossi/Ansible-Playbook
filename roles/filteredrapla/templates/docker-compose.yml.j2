@@ -5,12 +5,12 @@ networks:
 services:
   app:
     image: ghcr.io/littlerossi/dhbw-rapla-filtercalendar:latest
-    container_name: dhbwIcalCalendarFilter
+    container_name: filteredrapla
     networks:
       - web
     ports:
       - 8080:8080
     labels:
       - traefik.enable=true
-      - traefik.http.routers.${COMPOSE_PROJECT_NAME}-app.rule=Host(`{{ dhbwIcalCalendarFilter_domain | mandatory }}`)
+      - traefik.http.routers.${COMPOSE_PROJECT_NAME}-app.rule=Host(`{{ filteredrapla_domain | mandatory }}`)
       - traefik.http.routers.${COMPOSE_PROJECT_NAME}-app.entrypoints=https

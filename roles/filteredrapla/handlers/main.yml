@@ -1,0 +1,5 @@
+- name: restart filteredrapla.service
+  when: filteredrapla_started is not changed
+  ansible.builtin.systemd:
+    name: filteredrapla.service
+    state: restarted

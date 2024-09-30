@@ -1,5 +1,0 @@
-- name: restart dhbwIcalCalendarFilter.service
-  when: dhbwIcalCalendarFilter_started is not changed
-  ansible.builtin.systemd:
-    name: dhbwIcalCalendarFilter.service
-    state: restarted
