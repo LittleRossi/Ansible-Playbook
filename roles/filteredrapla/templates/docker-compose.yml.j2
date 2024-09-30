@@ -9,8 +9,8 @@ services:
     networks:
       - web
     ports:
-      - 4444:8080
+      - 8080:8080
     labels:
       - traefik.enable=true
-      - traefik.http.routers.${COMPOSE_PROJECT_NAME}-app.rule=Host(`{{ filteredrapla_domain | mandatory }}`)
-      - traefik.http.routers.${COMPOSE_PROJECT_NAME}-app.entrypoints=https
+      - traefik.http.routers.${COMPOSE_PROJECT_NAME}-app.rule=Host(`{{ filteredrapla_domain }}`) && PathPrefix(`/calendar`)
+      - traefik.http.routers.${COMPOSE_PROJECT_NAME}-app.entrypoints=https  # Verwende den HTTPS-EntryPoint
