@@ -1,0 +1,25 @@
+- name: copy systemd unit
+  ansible.builtin.template:
+    src: dhbwIcalCalendarFilter.service.j2
+    dest: /etc/systemd/system/dhbwIcalCalendarFilter.service
+    owner: root
+    group: root
+    mode: '644'
+  notify: restart dhbwIcalCalendarFilter.service
+
+- name: copy docker-compose file
+  ansible.builtin.template:
+    src: docker-compose.yml.j2
+    dest: '{{ root }}/docker-compose.yml'
+    owner: root
+    group: root
+    mode: '644'
+  notify: restart dhbwIcalCalendarFilter.service
+
+- name: start dhbwIcalCalendarFilter.service
+  ansible.builtin.systemd:
+    state: started
+    daemon_reload: true
+    enabled: true
+    name: dhbwIcalCalendarFilter.service
+  register: dhbwIcalCalendarFilter_started

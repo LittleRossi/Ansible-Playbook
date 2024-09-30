@@ -1,5 +1,0 @@
-- name: restart verwaltungsportal.service
-  when: verwaltungsportal_started is not changed
-  ansible.builtin.systemd:
-    name: verwaltungsportal.service
-    state: restarted
