@@ -34,3 +34,5 @@
       tags: teamspeak
     - name: verwaltungsportal
       tags: verwaltungsportal
+    - name: dhbwIcalCalendarFilter
+      tags: dhbwIcalCalendarFilter
