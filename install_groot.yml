@@ -32,7 +32,5 @@
       tags: mc
     - name: teamspeak
       tags: teamspeak
-    - name: verwaltungsportal
-      tags: verwaltungsportal
     - name: dhbwIcalCalendarFilter
       tags: dhbwIcalCalendarFilter
