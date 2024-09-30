@@ -9,7 +9,7 @@ services:
     networks:
       - web
     ports:
-      - 8080:8080
+      - 4444:8080
     labels:
       - traefik.enable=true
       - traefik.http.routers.${COMPOSE_PROJECT_NAME}-app.rule=Host(`{{ filteredrapla_domain | mandatory }}`)
