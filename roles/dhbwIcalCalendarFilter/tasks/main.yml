@@ -7,6 +7,11 @@
     mode: '644'
   notify: restart dhbwIcalCalendarFilter.service
 
+- name: create /data/dhbwIcalCalendarFilter dir
+  ansible.builtin.file:
+    path: '{{ root }}'
+    state: directory
+
 - name: copy docker-compose file
   ansible.builtin.template:
     src: docker-compose.yml.j2
