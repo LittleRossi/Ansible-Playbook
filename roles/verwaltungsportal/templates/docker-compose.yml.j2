@@ -1,0 +1,38 @@
+networks:
+  web:
+    external: true
+
+services:
+  database:
+    healthcheck:
+      test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost']
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    container_name: database
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_DATABASE=VerwaltungsPortal
+    image: ghcr.io/littlerossi/verwaltungsportal-database:latest
+
+  api:
+    container_name: api
+    depends_on:
+      database:
+        condition: service_healthy
+    ports:
+      - 8080:8080
+    image: ghcr.io/littlerossi/verwaltungsportal-api:latest
+
+  frontend:
+    container_name: frontend
+    ports:
+      - 4200:80
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.${COMPOSE_PROJECT_NAME}-app.rule=Host(`{{ verwaltungsportal_domain }}`)
+      - traefik.http.routers.${COMPOSE_PROJECT_NAME}-app.entrypoints=https  # Verwende den HTTPS-EntryPoint
+    image: ghcr.io/littlerossi/verwaltungsportal-frontend:latest
+    
